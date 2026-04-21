@@ -1,0 +1,13 @@
+"""Tests for exchange_registers/register_yobit.py."""
+
+from __future__ import annotations
+
+from bt_api_yobit.registry_registration import register_yobit
+
+
+class TestRegisterYobit:
+    """Tests for YoBit registration module."""
+
+    def test_module_imports(self):
+        """Test module can be imported."""
+        assert register_yobit is not None
