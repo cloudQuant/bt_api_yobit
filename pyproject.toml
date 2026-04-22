@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "bt_api_yobit"
-version = "0.15.1"
+version = "0.1.1"
 description = "YoBit exchange adapter for bt_api framework - Cryptocurrency exchange"
 readme = "README.md"
 requires-python = ">=3.9"
