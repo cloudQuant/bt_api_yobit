@@ -11,12 +11,12 @@ class YobitRequestTickerData(TickerData):
     def __init__(
         self,
         ticker_info: str | dict[str, Any],
-        symbol_name: str = "",
-        asset_type: str = "SPOT",
+        symbol_name: str = '',
+        asset_type: str = 'SPOT',
         has_been_json_encoded: bool = False,
     ) -> None:
         super().__init__(ticker_info, has_been_json_encoded)
-        self.exchange_name = "YOBIT"
+        self.exchange_name = 'YOBIT'
         self.local_update_time = time.time()
         self.symbol_name = symbol_name
         self.asset_type = asset_type
@@ -34,10 +34,10 @@ class YobitRequestTickerData(TickerData):
         self.has_been_init_data = False
 
     @classmethod
-    def from_json(cls, data: dict[str, Any]) -> "YobitRequestTickerData":
+    def from_json(cls, data: dict[str, Any]) -> YobitRequestTickerData:
         return cls(data, has_been_json_encoded=True)
 
-    def init_data(self) -> "YobitRequestTickerData":
+    def init_data(self) -> YobitRequestTickerData:
         if not self.has_been_json_encoded:
             self.ticker_data = (
                 json.loads(self.ticker_info)
@@ -56,13 +56,13 @@ class YobitRequestTickerData(TickerData):
         ):
             data = data[self.symbol_name.lower()]
         self.ticker_symbol_name = self.symbol_name or None
-        self.last_price = float(data.get("last", 0.0))
-        self.bid_price = float(data.get("buy", 0.0))
-        self.ask_price = float(data.get("sell", 0.0))
-        self.bid_volume = float(data.get("buy_volume", 0.0))
-        self.ask_volume = float(data.get("sell_volume", 0.0))
-        self.last_volume = float(data.get("vol", 0.0))
-        self.server_time = float(data.get("updated", 0.0) or 0.0)
+        self.last_price = float(data.get('last', 0.0))
+        self.bid_price = float(data.get('buy', 0.0))
+        self.ask_price = float(data.get('sell', 0.0))
+        self.bid_volume = float(data.get('buy_volume', 0.0))
+        self.ask_volume = float(data.get('sell_volume', 0.0))
+        self.last_volume = float(data.get('vol', 0.0))
+        self.server_time = float(data.get('updated', 0.0) or 0.0)
         self.has_been_init_data = True
         return self
 

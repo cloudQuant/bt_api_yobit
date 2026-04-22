@@ -1,4 +1,5 @@
 from bt_api_base.feeds.capability import Capability
+
 from bt_api_yobit.feeds.live_yobit.request_base import YobitRequestData
 
 
@@ -18,4 +19,4 @@ class YobitRequestDataSpot(YobitRequestData):
 
     def __init__(self, data_queue=None, **kwargs):
         super().__init__(data_queue, **kwargs)
-        self.exchange_name = kwargs.get("exchange_name", "YOBIT___SPOT")
+        self.exchange_name = kwargs.get('exchange_name', 'YOBIT___SPOT')
