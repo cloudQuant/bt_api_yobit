@@ -1,6 +1,8 @@
 from unittest.mock import MagicMock
+
 from bt_api_valr.feeds.live_valr.request_base import ValrRequestData
 from bt_api_wazirx.feeds.live_wazirx.request_base import WazirxRequestData
+
 from bt_api_yobit.feeds.live_yobit.request_base import YobitRequestData
 
 
